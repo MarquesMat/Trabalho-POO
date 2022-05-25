@@ -49,7 +49,8 @@ public class Atributos {
     
     public void setModificadores() {
         for (Integer atributo: this.atributos) {
-            this.modificadores.add((atributo-10)/2);
+            if (atributo == 9) this.modificadores.add(-1);
+            else this.modificadores.add((atributo-10)/2);
         }
     }
 }

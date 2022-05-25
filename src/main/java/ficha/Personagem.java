@@ -6,11 +6,10 @@ import atributos.Atributos;
 
 public class Personagem {
     String nome;
-    int hp, mana, def, deslocamento, nivel;
+    int pv, mana, def, deslocamento, nivel;
     Raca raca;
     Classe classe;
     Atributos atributos;
-    ArrayList<Atributos> listaAtributos;
     
     public void setNome(String nome) {
         this.nome = nome;
@@ -20,13 +19,13 @@ public class Personagem {
         this.atributos.setAtributo(i, num);
     }
     
-    public void setHp(int hp) {
-        this.hp = this.classe.getPv() + (this.classe.getPvNivel() * (this.nivel - 1));
+    public void setHp() {
+        this.pv = this.classe.getPv() + this.atributos.getModificador(2) + ((this.classe.getPvNivel() + this.atributos.getModificador(2)) * (this.nivel - 1));
     }
     
-    public void setMana(int mana) {
+    public void setMana() {
         this.mana = this.classe.getMana();
-        switch(this.classe.getNome()) {
+        switch(this.classe.getNome()) { //usar ENUM
             case "bruxo" -> this.mana += this.atributos.getModificador(3); //Somar modificador de INT
             case "clerigo" -> this.mana += this.atributos.getModificador(4); //Somar modificador de SAB
         }
