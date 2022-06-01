@@ -35,4 +35,10 @@ public class Personagem {
         this.def = 10  + (this.nivel / 2);
         if (true) this.def += this.atributos.getModificador(1);
     }
+    
+    public void setDeslocamento() {
+        this.deslocamento = 6;
+        if (raca.getDeslocamentoMaior()) this.deslocamento += 2;
+        else if (raca.getDeslocamentoMenor()) this.deslocamento -= 2;
+    }
 }

@@ -3,7 +3,7 @@ package atributos;
 import java.util.ArrayList;
 
 public class Atributos {
-    private ArrayList<Integer> atributos, modificadores; 
+    private ArrayList<Integer> atributos, modificadores;
     //FOR, DES, CON, INT, SAB, CAR
     
     public int getModificador(int i) {

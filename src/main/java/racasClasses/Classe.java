@@ -29,4 +29,12 @@ public class Classe extends RacasClasses {
     public int getMana() {
         return this.mana;
     }
+    
+    public static void ImprimeClasses(){
+        System.out.println("CLASSES:");
+        System.out.println("1 - Guerreiro");
+        System.out.println("2 - Bruxo");
+        System.out.println("3 - Clerigo");
+        System.out.println("4 - Cacador");
+    }
 }
