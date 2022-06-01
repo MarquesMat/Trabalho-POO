@@ -7,6 +7,7 @@ import racasClasses.Classe;
 public class TrabalhoPOO {
 
     public static void main(String[] args) {
+        
         Raca elfo = new Raca("elfo");
         Raca anao = new Raca("anao");
         Raca minotauro = new Raca("minotauro");
@@ -15,5 +16,6 @@ public class TrabalhoPOO {
         Classe bruxo = new Classe("bruxo", 8, 2, 6, false, false, false);
         Classe clerigo = new Classe("clerigo", 16, 4, 5, true, true, false);
         Classe cacador = new Classe("cacador", 16, 4, 4, false, true, true);
+        Menu.exec();
     }
 }

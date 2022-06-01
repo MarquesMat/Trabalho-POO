@@ -4,6 +4,7 @@
  */
 package ficha;
 import java.util.Scanner;
+import racasClasses.*;
 
 /**
  *
@@ -21,7 +22,7 @@ public class Menu {
             System.out.println("5 - Fechar");
     }
     
-    public static void main(String[] args) {
+    public static void exec() {
         System.out.println("----- Bem Vindo(a) ao menu -----");
         Scanner teclado = new Scanner(System.in);
         Scanner texto = new Scanner(System.in);
@@ -33,21 +34,21 @@ public class Menu {
             
             switch(op){
                 case  1 -> { 
-                    Personagem.ImprimeRacas();
+                    Raca.ImprimeRacas();
                 }
                 case 2 -> {
-                    Personagem.ImprimeClasses();
+                    Classe.ImprimeClasses();
           
                 } 
                 case 3 -> {
                     System.out.println("ESCOLHA SUA RACA:");
-                    Personagem.ImprimeRacas();
+                    Raca.ImprimeRacas();
                     a = texto.nextInt();  
                     
                 }
                 case 4 -> {
                     System.out.println("ESCOLHA SUA CLASSE:");
-                    Personagem.ImprimeClasses();
+                    Classe.ImprimeClasses();
                     a = texto.nextInt();  
                     
                 }
