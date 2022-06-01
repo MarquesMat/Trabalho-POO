@@ -25,8 +25,7 @@ public class Menu {
         System.out.println("----- Bem Vindo(a) ao menu -----");
         Scanner teclado = new Scanner(System.in);
         //Scanner texto = new Scanner(System.in);
-        int op, a;
-            
+        int op, a;    
         do{
             menu();
             op = teclado.nextInt();
@@ -43,7 +42,6 @@ public class Menu {
                     System.out.println("ESCOLHA SUA RACA:");
                     Raca.ImprimeRacas();
                     a = teclado.nextInt();  
-                    
                 }
                 case 4 -> {
                     System.out.println("ESCOLHA SUA CLASSE:");
