@@ -4,8 +4,9 @@
  */
 package ficha;
 import java.util.Scanner;
-import racasClasses.*;
 
+import racasClasses.*;
+import atributos.Atributos;
 /**
  *
  * @author paz1a
@@ -20,6 +21,8 @@ public class Menu {
         System.out.println("4 - Escolher Classe");
         System.out.println("5 - Fechar");
     }
+    
+    
     
     public static void exec() {
         System.out.println("----- Bem Vindo(a) ao menu -----");
@@ -41,12 +44,18 @@ public class Menu {
                 case 3 -> {
                     System.out.println("ESCOLHA SUA RACA:");
                     Raca.ImprimeRacas();
-                    a = teclado.nextInt();  
+                    a = teclado.nextInt();
+                    teclado.nextLine();
+                    Raca.implementaRaca(a);
+                    
+                    
                 }
                 case 4 -> {
                     System.out.println("ESCOLHA SUA CLASSE:");
                     Classe.ImprimeClasses();
-                    a = teclado.nextInt();  
+                    a = teclado.nextInt();
+                    teclado.nextLine();
+                    Classe.implementaClasse(a);
                 }
             } 
            

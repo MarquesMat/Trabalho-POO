@@ -1,10 +1,17 @@
 package atributos;
 
 import java.util.ArrayList;
+enum enumRacas{
+		ANAO,ELFO,MINOTAURO,GOBLIN;
+	}
 
-public class Atributos {
-    private ArrayList<Integer> atributos, modificadores;
+
+
+public class Atributos {   
+	
+	private ArrayList<Integer> atributos, modificadores;
     //FOR, DES, CON, INT, SAB, CAR
+    
     
     public int getModificador(int i) {
         return this.modificadores.get(i);
@@ -18,25 +25,31 @@ public class Atributos {
         int novoAtributo = this.atributos.get(i) + alt;
         this.atributos.set(i, novoAtributo);
     }
+   
     
-    public void setAtributosRaca(String raca) {
+   
+        
+    	
+       
+    public void setAtributosRaca(String nome) {
+        enumRacas raca = enumRacas.valueOf(nome);
         switch(raca) {
-            case "elfo" -> {
+            case ELFO -> {
                 this.altAtributo(2, -2); //-2 em CON
                 this.altAtributo(3, 4); //+4 em INT
                 this.altAtributo(1, 2); //+2 em DES
             }
-            case "minotauro" -> {
+            case MINOTAURO -> {
                 this.altAtributo(0, 4); //+4 em FOR
                 this.altAtributo(2, 2); //+2 em CON
                 this.altAtributo(4, -2); //-2 em SAB
             }
-            case "anao" -> {
+            case ANAO -> {
                 this.altAtributo(2, 4); //+4 em CON
                 this.altAtributo(4, 2); //+2 em SAB
                 this.altAtributo(1, -2); //-2 em DES
             }
-            case "goblin" -> {
+            case GOBLIN -> {
                 this.altAtributo(1, 4); //+4 em DES
                 this.altAtributo(3, 2); //+2 em INT
                 this.altAtributo(5, -2); //-2 em CAR
@@ -46,6 +59,7 @@ public class Atributos {
             }
         }
     }
+    
     
     public void setModificadores() {
         for (Integer atributo: this.atributos) {
