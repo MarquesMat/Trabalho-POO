@@ -37,4 +37,24 @@ public class Classe extends RacasClasses {
         System.out.println("3 - Clerigo");
         System.out.println("4 - Cacador");
     }
+    public static void implementaClasse(int opcao) {
+    	switch(opcao){
+        case 1 ->{
+        	Classe guerreiro = new Classe("guerreiro", 20, 5, 3, true, true, true);
+            
+        }
+        case 2 ->{
+        	Classe bruxo = new Classe("bruxo", 8, 2, 6, false, false, false);
+            
+        }
+        case 3 ->{
+        	Classe clerigo = new Classe("clerigo", 16, 4, 5, true, true, false);
+            ;
+        }
+        case 4 ->{
+        	Classe cacador = new Classe("cacador", 16, 4, 4, false, true, true);
+            
+        }
+    }
+    }
 }
