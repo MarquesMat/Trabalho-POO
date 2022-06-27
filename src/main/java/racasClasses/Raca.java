@@ -61,6 +61,7 @@ public class Raca extends RacasClasses {
             case 4 ->{
                 Raca goblin = new Raca("GOBLIN", false, false);
                 
+                
             }
         }
 }
