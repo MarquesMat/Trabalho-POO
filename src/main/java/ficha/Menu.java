@@ -12,6 +12,7 @@ import atributos.Atributos;
  * @author paz1a
  */
 public class Menu {
+    
     public static void menu() {
         //opções de imprimir classes raças e escolher 
         System.out.println("\nO que deseja fazer?");
@@ -19,7 +20,8 @@ public class Menu {
         System.out.println("2 - Imprimir Classes");
         System.out.println("3 - Escolher Raca");
         System.out.println("4 - Escolher Classe");
-        System.out.println("5 - Fechar");
+        System.out.println("5 - Rolar Dados");
+        System.out.println("6 - Fechar");
     }
     
     
@@ -27,7 +29,8 @@ public class Menu {
     public static void exec() {
         System.out.println("----- Bem Vindo(a) ao menu -----");
         Scanner teclado = new Scanner(System.in);
-        //Scanner texto = new Scanner(System.in);
+        
+        
         int op, a;    
         do{
             menu();
@@ -57,9 +60,14 @@ public class Menu {
                     teclado.nextLine();
                     Classe.implementaClasse(a);
                 }
+                /*
+                case 5 ->{
+                    Dados.imprimeNumeros();
+                }
+                */
             } 
            
-        }while(op != 5 );
+        }while(op != 6 );
                   
     }
 }
