@@ -24,10 +24,10 @@ public class Atributos {
     public void altAtributo(int i, int alt) { //modificar o atributo de acordo com a raça
         int novoAtributo = this.atributos.get(i) + alt;
         this.atributos.set(i, novoAtributo);
-    //testee
-    }
     
+    }
    
+    
     
    
         
