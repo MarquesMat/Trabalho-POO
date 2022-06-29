@@ -6,7 +6,6 @@ package ficha;
 import java.util.Scanner;
 
 import racasClasses.*;
-import atributos.Atributos;
 /**
  *
  * @author paz1a
@@ -60,11 +59,11 @@ public class Menu {
                     teclado.nextLine();
                     Classe.implementaClasse(a);
                 }
-                /*
+                
                 case 5 ->{
-                    Dados.imprimeNumeros();
+                    Dados.execut();
                 }
-                */
+                
             } 
            
         }while(op != 6 );
