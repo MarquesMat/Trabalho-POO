@@ -29,19 +29,7 @@ public class Raca extends RacasClasses {
         return this.atributos;
     }
     
-    public static void ImprimeRacas(){
-        System.out.println("RACAS:");
-        /*
-        Nome
-        deslocamento: 6 q
-        Atributos: +4 FOR, +2 CON, -2 SAB
-        Lista de Poderes
-        */
-        System.out.println("1 - Elfo");
-        System.out.println("2 - Anao");
-        System.out.println("3 - Minotauro");
-        System.out.println("4 - Goblin");
-    }
+    
    
 
 	
