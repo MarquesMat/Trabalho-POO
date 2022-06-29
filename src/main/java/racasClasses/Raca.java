@@ -1,5 +1,5 @@
 package racasClasses;
-import atributos.Atributos;
+
 
 
 
@@ -42,29 +42,7 @@ public class Raca extends RacasClasses {
         System.out.println("3 - Minotauro");
         System.out.println("4 - Goblin");
     }
-    public static void implementaRaca(int opcao){
-        switch(opcao){
-            case 1 ->{
-               Raca elfo = new Raca("ELFO", true, false);
-              
-               
-
-            }
-            case 2 ->{
-               Raca anao = new Raca("ANAO", false, true);
-               
-            }
-            case 3 ->{
-               Raca minotauro = new Raca("MINOTAURO", false, false);
-               
-            }
-            case 4 ->{
-                Raca goblin = new Raca("GOBLIN", false, false);
-                
-                
-            }
-        }
-}
+   
 
 	
    

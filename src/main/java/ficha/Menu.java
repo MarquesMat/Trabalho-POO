@@ -37,27 +37,27 @@ public class Menu {
             
             switch(op){
                 case  1 -> { 
-                    Raca.ImprimeRacas();
+                    BancoDeRacas.ImprimeRacas();
                 }
                 case 2 -> {
-                    Classe.ImprimeClasses();
+                    BancoDeClasses.ImprimeClasses();
           
                 } 
                 case 3 -> {
                     System.out.println("ESCOLHA SUA RACA:");
-                    Raca.ImprimeRacas();
-                    a = teclado.nextInt();
-                    teclado.nextLine();
-                    Raca.implementaRaca(a);
+                    BancoDeRacas.ImprimeRacas();
+                    
+                   
+                    
                     
                     
                 }
                 case 4 -> {
                     System.out.println("ESCOLHA SUA CLASSE:");
-                    Classe.ImprimeClasses();
-                    a = teclado.nextInt();
-                    teclado.nextLine();
-                    Classe.implementaClasse(a);
+                    BancoDeClasses.ImprimeClasses();
+                    
+                    
+                    
                 }
                 
                 case 5 ->{
