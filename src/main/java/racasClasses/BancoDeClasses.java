@@ -18,11 +18,24 @@ public class BancoDeClasses {
     }
     public static void ImprimeClasses(){
         System.out.println("CLASSES:");
-        System.out.println("1 - Guerreiro(20 de pv, +5pv por nivel, 3 de mana por nivel)");
-        System.out.println("2 - Bruxo(8 de pv, +2pv por nivel, 6 de mana por nivel)");
-        System.out.println("3 - Clerigo(16 de pv, +4pv por nivel, 5 de mana por nivel)");
-        System.out.println("4 - Cacador(16 de pv, +4pv por nivel, 4 de mana por nivel");
+        System.out.println("Guerreiro");
+        System.out.println("Bruxo");
+        System.out.println("Clerigo");
+        System.out.println("Cacador");
     }
 
-    
+    public static void EscolheClasses(){
+        System.out.println("1 - Guerreiro");
+        System.out.println("Status: 20 de pontos de vida base, + 5 pontos de vida por nível, 3 pontos de mana por nível");
+        System.out.println("");
+        System.out.println("2 - Bruxo");
+        System.out.println("Status: 8 de pontos de vida base, + 2 pontos de vida por nível, 6 pontos de mana por nível");
+        System.out.println("");
+        System.out.println("3- Clerigo");
+        System.out.println("Status: 16 de pontos de vida base, + 4 pontos de vida por nível, 5 pontos de mana por nível");
+        System.out.println("");
+        System.out.println("4- Cacador");
+        System.out.println("Status: 16 de pontos de vida base, + 4 pontos de vida por nível, 4 pontos de mana por nível");
+        System.out.println("");
+    }
 }
