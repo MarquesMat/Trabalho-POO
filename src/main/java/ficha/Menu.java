@@ -45,7 +45,7 @@ public class Menu {
                 } 
                 case 3 -> {
                     System.out.println("ESCOLHA SUA RACA:");
-                    BancoDeRacas.ImprimeRacas();
+                    BancoDeRacas.EscolheRacas();
                     
                    
                     
@@ -54,7 +54,7 @@ public class Menu {
                 }
                 case 4 -> {
                     System.out.println("ESCOLHA SUA CLASSE:");
-                    BancoDeClasses.ImprimeClasses();
+                    BancoDeClasses.EscolheClasses();
                     
                     
                     
