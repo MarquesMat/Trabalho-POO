@@ -1,21 +1,34 @@
 
 package racasClasses;
 
+import java.util.HashMap;
+import java.util.Map;
 
-public class BancoDeClasses {
-    public static Classe getGuerreiro(){
-        return new Classe("guerreiro", 20, 5, 3, true, true, true);
-}
-    public static Classe getBruxo(){
-        return new Classe("bruxo", 8, 2, 6, false, false, false);
-    }
-    public static Classe getClerigo(){
-        return new Classe("clerigo", 16, 4, 5, true, true, false);
+
+public final class BancoDeClasses {
+    public static Map<Integer, Classe> mapClasses = new HashMap<>();
+    //alterar pra protected -> mudar para o package do Menu
+    
+    public BancoDeClasses() {
+        BancoDeClasses.mapClasses.put(1, this.getGuerreiro());
+        BancoDeClasses.mapClasses.put(2, this.getBruxo());
+        BancoDeClasses.mapClasses.put(3, this.getClerigo());
+        BancoDeClasses.mapClasses.put(4, this.getCacador());
     }
     
-    public static Classe getCacador(){
+    public Classe getGuerreiro(){
+        return new Classe("guerreiro", 20, 5, 3, true, true, true);
+    }
+    public Classe getBruxo(){
+        return new Classe("bruxo", 8, 2, 6, false, false, false);
+    }
+    public Classe getClerigo(){
+        return new Classe("clerigo", 16, 4, 5, true, true, false);
+    }
+    public Classe getCacador(){
         return new Classe("cacador", 16, 4, 4, false, true, true);
     }
+    
     public static void ImprimeClasses(){
         System.out.println("CLASSES:");
         System.out.println("Guerreiro");

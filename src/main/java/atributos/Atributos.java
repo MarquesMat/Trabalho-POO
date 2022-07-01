@@ -1,17 +1,25 @@
 package atributos;
 
 import java.util.ArrayList;
-enum enumRacas{
-		ANAO,ELFO,MINOTAURO,GOBLIN;
-	}
-
-
+import java.util.List;
 
 public class Atributos {   
-	
-	private ArrayList<Integer> atributos, modificadores;
+    private List<Integer> atributos = new ArrayList<>();
+    private List<Integer> modificadores = new ArrayList<>();
     //FOR, DES, CON, INT, SAB, CAR
     
+    public Atributos(int forca, int destreza, int constituicao, int inteligencia, int sabedoria, int carisma) {
+        this.atributos.add(forca);
+        this.atributos.add(destreza);
+        this.atributos.add(constituicao);
+        this.atributos.add(inteligencia);
+        this.atributos.add(sabedoria);
+        this.atributos.add(carisma);
+    }
+    
+    public List<Integer> getAtributos() {
+        return this.atributos;
+    }
     
     public int getModificador(int i) {
         return this.modificadores.get(i);
@@ -20,45 +28,11 @@ public class Atributos {
     public void setAtributo(int i, int atributo) {
         this.atributos.set(i, atributo);
     }
-    
-    public void altAtributo(int i, int alt) { //modificar o atributo de acordo com a raça
-        int novoAtributo = this.atributos.get(i) + alt;
-        this.atributos.set(i, novoAtributo);
-    
-    }
-   
-    
-    
-   
-        
-    	
-       
-    public void setAtributosRaca(String nome) {
-        enumRacas raca = enumRacas.valueOf(nome);
-        switch(raca) {
-            case ELFO -> {
-                this.altAtributo(2, -2); //-2 em CON
-                this.altAtributo(3, 4); //+4 em INT
-                this.altAtributo(1, 2); //+2 em DES
-            }
-            case MINOTAURO -> {
-                this.altAtributo(0, 4); //+4 em FOR
-                this.altAtributo(2, 2); //+2 em CON
-                this.altAtributo(4, -2); //-2 em SAB
-            }
-            case ANAO -> {
-                this.altAtributo(2, 4); //+4 em CON
-                this.altAtributo(4, 2); //+2 em SAB
-                this.altAtributo(1, -2); //-2 em DES
-            }
-            case GOBLIN -> {
-                this.altAtributo(1, 4); //+4 em DES
-                this.altAtributo(3, 2); //+2 em INT
-                this.altAtributo(5, -2); //-2 em CAR
-            }
-            default -> {
-                //implementar um método pra humano
-            }
+     
+    public void setAtributosRaca(List<Integer> atributosRaca) {
+        //soma os atributos do jogador com os da raça
+        for(int i=0; i<this.atributos.size(); i++) {
+            this.atributos.set(i, this.atributos.get(i)+atributosRaca.get(i));      
         }
     }
     

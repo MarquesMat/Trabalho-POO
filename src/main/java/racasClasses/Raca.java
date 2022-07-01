@@ -1,22 +1,24 @@
 package racasClasses;
 
-
-
-
+import atributos.Atributos;
+import java.util.List;
 
 public class Raca extends RacasClasses {
-    private boolean deslocamentoMaior, deslocamentoMenor; //atrib1, atrib2, atrib3, 4, 2, -2
-    private String atributos;
-    
-    
-            
-    public Raca(String nome, boolean deslocamentoMaior, boolean deslocamentoMenor) {
+    private boolean deslocamentoMaior, deslocamentoMenor;
+    private Atributos atributos;
+    /*
+    deslocamentoMaior -> 9 quadrados
+    deslocamentoMenor -> 4 quadrados
+    atributos -> serve para alterar os atributos de acordo com a raça
+    */
+
+    public Raca(String nome, boolean deslocamentoMaior, boolean deslocamentoMenor, int f, int d, int con, int i, int s, int car) {
         super(nome);
         this.deslocamentoMaior = deslocamentoMaior;
         this.deslocamentoMenor = deslocamentoMenor;
-        //this.atributos = atributos;
+        this.atributos = new Atributos(f, d, con, i, s, car);
     }
-    
+
     public boolean getDeslocamentoMaior() {
         return this.deslocamentoMaior;
     }
@@ -25,8 +27,8 @@ public class Raca extends RacasClasses {
         return this.deslocamentoMenor;
     }
     
-    public String getAtributos() {
-        return this.atributos;
+    public List<Integer> getAtributos() {
+        return this.atributos.getAtributos();
     }
     
     

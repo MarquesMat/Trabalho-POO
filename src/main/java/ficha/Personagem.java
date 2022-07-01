@@ -1,15 +1,21 @@
 package ficha;
 
-import java.util.ArrayList;
 import racasClasses.*;
 import atributos.Atributos;
 
 public class Personagem {
-    String nome;
-    int pv, mana, def, deslocamento, nivel;
-    Raca raca;
-    Classe classe;
-    Atributos atributos;
+    private String nome;
+    private int pv, mana, deslocamento;
+    protected static int def, nivel;
+    //adicionar a classe de Equipamentos no mesmo package de Personagem para alterar a defesa
+    private Raca raca;
+    private Classe classe;
+    private Atributos atributos;
+    
+    public Personagem(Raca raca, Classe classe) {
+        this.raca = raca;
+        this.classe = classe;
+    }
     
     public void setNome(String nome) {
         this.nome = nome;
@@ -25,15 +31,15 @@ public class Personagem {
     
     public void setMana() {
         this.mana = this.classe.getMana();
-        switch(this.classe.getNome()) { //usar ENUM
+        switch(this.classe.getNome()) {
             case "bruxo" -> this.mana += this.atributos.getModificador(3); //Somar modificador de INT
             case "clerigo" -> this.mana += this.atributos.getModificador(4); //Somar modificador de SAB
         }
     }
     
     public void setDefesa() {
-        this.def = 10  + (this.nivel / 2);
-        if (true) this.def += this.atributos.getModificador(1);
+        Personagem.def = 10  + (Personagem.nivel / 2);
+        if (true) Personagem.def += this.atributos.getModificador(1);
     }
     
     public void setDeslocamento() {
