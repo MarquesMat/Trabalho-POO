@@ -16,7 +16,7 @@ public final class BancoDeRacas {
         BancoDeRacas.mapRacas.put(4, this.getGoblin());
     }
     
-    public Raca getElfo(){
+    public  Raca getElfo(){
         return new Raca("elfo", true, false, 0, 2, -2, 4, 0, 0);      
     }
     public Raca getAnao(){

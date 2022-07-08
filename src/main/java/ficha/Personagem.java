@@ -11,11 +11,25 @@ public class Personagem {
     private Raca raca;
     private Classe classe;
     private Atributos atributos;
+    private String simbolo;
     
-    public Personagem(Raca raca, Classe classe) {
+    public Personagem(Raca raca, Classe classe, String simbolo) {
         this.raca = raca;
         this.classe = classe;
+        this.simbolo = simbolo;//adicionado simbolo usado no mapa de combate
     }
+    
+    public String getSimbolo(){
+        return simbolo;
+    }
+    public Raca getRaca() {
+        return raca;
+    }
+
+    public Classe getClasse() {
+        return classe;
+    }
+    
     
     public void setNome(String nome) {
         this.nome = nome;
