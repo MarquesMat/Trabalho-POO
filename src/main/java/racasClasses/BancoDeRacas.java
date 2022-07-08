@@ -59,7 +59,7 @@ public final class BancoDeRacas {
       confere = teclado.nextInt();
       
       switch(confere){
-          case 1 -> {}
+          case 1 -> { System.out.println("Sua raca foi escolhida.\n"); }
           case 2 -> { EscolheRacas(); }
           default -> { System.out.println("Esta opcao e invalida. Escolha outra opcao.\n"); Confere(); }
       }
