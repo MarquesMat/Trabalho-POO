@@ -80,7 +80,6 @@ public final class BancoDeRacas {
                 System.out.println("Voce escolheu a opcao 1.");
                 System.out.println("Sua raca e: ELFO.\n");
                 Confere();
-              
             }
             case 2 -> {
                 System.out.println("Voce escolheu a opcao 2.");
