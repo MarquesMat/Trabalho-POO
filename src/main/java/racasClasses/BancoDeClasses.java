@@ -82,7 +82,6 @@ public final class BancoDeClasses {
                 System.out.println("Voce escolheu a opcao 2.");
                 System.out.println("Sua classe e: BRUXO.\n");
                 Confere();
-
             }
             case 3 -> {
                 System.out.println("Voce escolheu a opcao 3.");
