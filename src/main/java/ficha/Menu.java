@@ -1,5 +1,6 @@
 package ficha;
 import java.util.Scanner;
+import java.lang.IllegalArgumentException;
 
 import racasClasses.*;
 
@@ -22,8 +23,7 @@ public class Menu {
         System.out.println("----- Bem Vindo(a) ao menu -----");
         Scanner teclado = new Scanner(System.in);
         
-        
-        int op, a;    
+        int op;    
         do{
             menu();
             op = teclado.nextInt();
@@ -31,34 +31,32 @@ public class Menu {
             switch(op){
                 case  1 -> { 
                     BancoDeRacas.ImprimeRacas();
+                    
                 }
                 case 2 -> {
                     BancoDeClasses.ImprimeClasses();
-          
+
                 } 
                 case 3 -> {
-                    System.out.println("ESCOLHA SUA RACA:");
                     BancoDeRacas.EscolheRacas();
-                    
-                   
-                    
-                    
-                    
+
                 }
                 case 4 -> {
-                    System.out.println("ESCOLHA SUA CLASSE:");
                     BancoDeClasses.EscolheClasses();
-                    
-                    
-                    
+
                 }
-                
+
                 case 5 ->{
                     Dados.execut();
                 }
+                    
+                default ->{
+                    if (op != 6){
+                        System.out.println("Esta não é uma opção válida. Escolha outra opcao");
+                    }
+                }       
+            }
                 
-            } 
-           
         }while(op != 6 );
                   
     }
