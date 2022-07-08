@@ -57,7 +57,7 @@ public final class BancoDeClasses {
         confere = teclado.nextInt();
 
         switch(confere){
-            case 1 -> {}
+            case 1 -> { System.out.println("Sua classe foi escolhida.\n"); }
             case 2 -> { EscolheClasses(); }
             default -> { System.out.println("Esta opcao e invalida. Escolha outra opcao.\n"); Confere(); }
         }
