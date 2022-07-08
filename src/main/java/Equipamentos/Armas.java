@@ -1,26 +1,26 @@
 
 package Equipamentos;
 
-public abstract class Armas {
-       protected String nome;
-       protected int dano;
-       protected int critico;
-       protected String alcance;
-       protected float peso;
-       protected String tipo;
+public class Armas {
+       
+       private int dano;
+       private int margem;
+       private int critico;
+       private int alcance; //0 para sem alcance, 1 para "curto" e 2 para medio
+       private float peso;
+       private int tipo; //1 para perfuracao, 2 para corte
 
-    public Armas(String nome, int dano, int critico, String alcance, float peso, String tipo) {
-        this.nome = nome;
+    public Armas(int dano, int margem, int critico, int alcance, float peso, int tipo) {
+        
         this.dano = dano;
+        this.margem = margem;
         this.critico = critico;
         this.alcance = alcance;
         this.peso = peso;
         this.tipo = tipo;
     }
 
-    public String getNome() {
-        return nome;
-    }
+    
 
     public int getDano() {
         return dano;
@@ -30,7 +30,7 @@ public abstract class Armas {
         return critico;
     }
 
-    public String getAlcance() {
+    public int getAlcance() {
         return alcance;
     }
 
@@ -38,7 +38,7 @@ public abstract class Armas {
         return peso;
     }
 
-    public String getTipo() {
+    public int getTipo() {
         return tipo;
     }
     

@@ -22,13 +22,7 @@ public class Personagem {
     public String getSimbolo(){
         return simbolo;
     }
-    public Raca getRaca() {
-        return raca;
-    }
-
-    public Classe getClasse() {
-        return classe;
-    }
+    
     
     
     public void setNome(String nome) {

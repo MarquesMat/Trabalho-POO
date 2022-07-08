@@ -5,12 +5,12 @@
 package Equipamentos;
 
 
-public class EquipamentosDefensivos {
+public class Armaduras {
     private int defesa;
     private int penalidade;
     private int peso;
 
-    public EquipamentosDefensivos(int defesa, int penalidade, int peso) {
+    public Armaduras (int defesa, int penalidade, int peso) {
         this.defesa = defesa;
         this.penalidade = penalidade;
         this.peso = peso;
