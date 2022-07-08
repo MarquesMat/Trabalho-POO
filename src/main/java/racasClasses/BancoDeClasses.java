@@ -1,8 +1,10 @@
 
 package racasClasses;
 
+import ficha.Menu;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 
 public final class BancoDeClasses {
@@ -31,13 +33,6 @@ public final class BancoDeClasses {
     
     public static void ImprimeClasses(){
         System.out.println("CLASSES:");
-        System.out.println("Guerreiro");
-        System.out.println("Bruxo");
-        System.out.println("Clerigo");
-        System.out.println("Cacador");
-    }
-
-    public static void EscolheClasses(){
         System.out.println("1 - Guerreiro");
         System.out.println("Status: 20 de pontos de vida base, + 5 pontos de vida por nível, 3 pontos de mana por nível");
         System.out.println("");
@@ -50,5 +45,65 @@ public final class BancoDeClasses {
         System.out.println("4- Cacador");
         System.out.println("Status: 16 de pontos de vida base, + 4 pontos de vida por nível, 4 pontos de mana por nível");
         System.out.println("");
+    
+    }
+    
+     public static void Confere(){
+        Scanner teclado = new Scanner(System.in);
+        int confere;
+        System.out.println("Voce confirma?");
+        System.out.println("1 - Sim");
+        System.out.println("2 - Escolher outra classe");
+        confere = teclado.nextInt();
+
+        switch(confere){
+            case 1 -> {}
+            case 2 -> { EscolheClasses(); }
+            default -> { System.out.println("Esta opcao e invalida. Escolha outra opcao.\n"); Confere(); }
+        }
+  }
+
+    public static void EscolheClasses(){
+        Scanner teclado = new Scanner(System.in);
+        ImprimeClasses();
+        System.out.println("5 - Voltar para o menu.\n");
+        System.out.print("ESCOLHA SUA CLASSE: ");
+        
+        int op;
+        op = teclado.nextInt();
+        
+        switch(op){
+            case 1 -> {
+                System.out.println("Voce escolheu a opcao 1.");
+                System.out.println("Sua classe e: GUERREIRO.\n");
+                Confere();
+            }
+            case 2 -> {
+                System.out.println("Voce escolheu a opcao 2.");
+                System.out.println("Sua classe e: BRUXO.\n");
+                Confere();
+
+            }
+            case 3 -> {
+                System.out.println("Voce escolheu a opcao 3.");
+                System.out.println("Sua classe e: CLERIGO.\n");
+                Confere();
+
+            }
+            case 4 -> {
+                System.out.println("Voce escolheu a opcao 4.");
+                System.out.println("Sua classe e: CACADOR.\n");
+                Confere();
+
+            }
+            
+            case 5 -> { }
+            
+            default -> {
+                System.out.println("Esta nao é uma opcao valida. Escolha outra opcao.\n");
+                EscolheClasses();
+            }
+        }
+        
     }
 }
