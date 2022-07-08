@@ -55,7 +55,7 @@ public class Menu {
                         System.out.println("Esta não é uma opção válida. Escolha outra opcao");
                     }
                 }       
-                }
+            }
                 
         }while(op != 6 );
                   
