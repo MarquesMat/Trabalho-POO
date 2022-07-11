@@ -2,20 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package equipamentos;
+package Equipamentos;
 
 
 public class Armaduras {
     private int defesa;
     private int penalidade;
-    private String nome;
-    private boolean pesada;
+    private int peso;
 
-    public Armaduras (int defesa, int penalidade, String nome, boolean pesada) {
+    public Armaduras (int defesa, int penalidade, int peso) {
         this.defesa = defesa;
         this.penalidade = penalidade;
-        this.nome = nome;
-        this.pesada = pesada;
+        this.peso = peso;
     }
 
     public int getDefesa() {
@@ -23,14 +21,11 @@ public class Armaduras {
     }
 
     public int getPenalidade() {
-        return this.penalidade;
+        return penalidade;
     }
 
-    public String getNome() {
-        return this.nome;
+    public int getPeso() {
+        return peso;
     }
     
-    public boolean getPesada() {
-        return this.pesada;
-    }
 }
