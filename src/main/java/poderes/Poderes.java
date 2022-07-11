@@ -1,8 +1,10 @@
 package poderes;
 
-import java.util.ArrayList;
-
 public class Poderes {
     private String nome, descricao;
-    private boolean defesa, mana, deslocamento;
+    private boolean vida, mana, defesa;
+    
+    public Poderes (String nome, String descricao, boolean vida, boolean mana, boolean defesa) {
+        
+    }
 }
