@@ -62,14 +62,14 @@ public class Personagem {
     }
     
     public void setHp() {
-        this.pv = Personagem.classe.getPv() + Personagem.atributos.getModificador(2) + ((Personagem.classe.getPvNivel() + Personagem.atributos.getModificador(2)) * (Personagem.nivel - 1));
+        Personagem.pv = Personagem.classe.getPv() + Personagem.atributos.getModificador(2) + ((Personagem.classe.getPvNivel() + Personagem.atributos.getModificador(2)) * (Personagem.nivel - 1));
     }
     
     public void setMana() {
-        this.mana = Personagem.classe.getMana();
+        Personagem.mana = Personagem.classe.getMana();
         switch(Personagem.classe.getNome()) {
-            case "bruxo" -> this.mana += Personagem.atributos.getModificador(3); //Somar modificador de INT
-            case "clerigo" -> this.mana += Personagem.atributos.getModificador(4); //Somar modificador de SAB
+            case "bruxo" -> Personagem.mana += Personagem.atributos.getModificador(3); //Somar modificador de INT
+            case "clerigo" -> Personagem.mana += Personagem.atributos.getModificador(4); //Somar modificador de SAB
         }
     }
     
