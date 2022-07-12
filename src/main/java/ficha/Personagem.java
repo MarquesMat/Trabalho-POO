@@ -1,5 +1,6 @@
 package ficha;
 
+import equipamentos.Armaduras;
 import racasClasses.*;
 import equipamentos.*;
 import atributos.Atributos;
@@ -10,9 +11,19 @@ public class Personagem {
     private static int atq, def, nivel;
     private static Raca raca;
     private static Classe classe;
+    private static Armas arma;
+
+    public static void setArma(Armas arma) {
+        Personagem.arma = arma;
+    }
+
+    public static Armas getArma() {
+        return arma;
+    }
     private static Armaduras armadura;
     protected static Atributos atributos;
     private String simbolo;
+    
     
     public Personagem() {
         Personagem.atributos = new Atributos(0,0,0,0,0,0);
@@ -72,7 +83,15 @@ public class Personagem {
             case "clerigo" -> Personagem.mana += Personagem.atributos.getModificador(4); //Somar modificador de SAB
         }
     }
-    
+    public static int getPv(){
+        return Personagem.pv;
+    }
+    public static int getMana(){
+        return Personagem.mana;
+    }
+    public static void reduzMana(int i){
+        Personagem.mana -= 1;
+    }
     public static void equipar() {
         Personagem.setDefesa();
         Personagem.setDeslocamento();
@@ -88,6 +107,15 @@ public class Personagem {
     }
     public static int getDefesa() {
         return Personagem.def;
+    }
+    public static void adcDefesa(int i){
+        Personagem.def += i;
+    }
+    public static void curar(int i){
+        Personagem.pv += i;
+    }
+    public static void dano(int i){
+        Personagem.pv -= i;
     }
     public static void setDeslocamento() {
         Personagem.deslocamento = 6;

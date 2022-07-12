@@ -100,7 +100,7 @@ public class Menu {
                 case 3 -> {
                     x = BancoDeArmas.EscolheArmas(Personagem.getClasse().getArmasMarcias());
                     if(x != 0) {
-                        Personagem.setArmadura(BancoDeArmaduras.mapArmaduras.get(x));
+                        Personagem.setArma(BancoDeArmas.mapArmas.get(x));
                         verifica[0] = 1;
                     }
                 }

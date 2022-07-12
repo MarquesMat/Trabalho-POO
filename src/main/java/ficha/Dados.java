@@ -106,4 +106,14 @@ public class Dados {
         definirAtributos(numeros);
         return numeros;
     }
+    public static int rola20(){
+        Random dado = new Random(); 
+        int d1 = dado.nextInt(20) + 1;
+        return d1;
+    }
+    public static int rolaDado(int i){
+        Random dado = new Random(); 
+        int d1 = dado.nextInt(i) + 1;
+        return d1;
+    }
 }
