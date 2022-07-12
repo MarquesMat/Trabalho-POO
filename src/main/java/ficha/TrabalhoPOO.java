@@ -34,7 +34,14 @@ public class TrabalhoPOO {
         System.out.println("2 - Magia");
         
         op = in.nextInt();
+        if (op == 1 || op == 2){
         return op;
+        }
+        else{
+            System.out.println("Opcao invalida");
+            escolherOpcoes();
+        }
+        return 0;
     }
     public static int escolherMagiaB(){
         Scanner in = new Scanner(System.in);
@@ -44,8 +51,16 @@ public class TrabalhoPOO {
         System.out.println("2 - Armadura Arcana (+5 def)");
         System.out.println("3 - Enfraquecer (-2 em forca)");
         op = in.nextInt();
+        if (op == 1 || op == 2){
         return op;
+        }
+        else{
+            System.out.println("Opcao invalida");
+            escolherMagiaB();
+        }
+        return 0;
     }
+    
     public static int escolherMagiaC(){
         Scanner in = new Scanner(System.in);
         int op = 0;
@@ -54,7 +69,14 @@ public class TrabalhoPOO {
         System.out.println("2 - Escudo (+2 def)");
         System.out.println("3 - Curar (Dois dados d8 de vida)");
         op = in.nextInt();
+        if (op == 1 || op == 2){
         return op;
+        }
+        else{
+            System.out.println("Opcao invalida");
+            escolherMagiaC();
+        }
+        return 0;
     }
     
     public static int acertoGolpe(){
@@ -85,6 +107,7 @@ public class TrabalhoPOO {
                 System.out.println("Seu turno");
                 System.out.println(" ");
                 int op = escolherOpcoes();
+                
                 if(op == 1){
                    if(acertoGolpe()>def) {
                        PvDemonio -= Dano();
@@ -185,6 +208,7 @@ public class TrabalhoPOO {
                         }
                     }
                 }
+                
             
         }
             else{
