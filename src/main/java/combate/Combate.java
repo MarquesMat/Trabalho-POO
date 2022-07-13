@@ -2,6 +2,7 @@ package combate;
 
 import ficha.Personagem;
 import ficha.Dados;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Combate {
@@ -56,7 +57,7 @@ public class Combate {
     }
     
     public static void opcoes(int padrao) {
-        System.out.println("\nESCOLHA UMA OPCAO:");
+        System.out.println("\nOPCOES:");
         System.out.println("1 -> AVANCAR");
         if(dist == 1) System.out.println("\n---Voce esta de frente para o seu inimigo---");
         System.out.println("2 -> RECUAR");
@@ -65,6 +66,7 @@ public class Combate {
         if(padrao == 0) System.out.println("\n---Voce nao possui mais acao padrao---");
         System.out.println("4 -> USAR PODER");
         if(padrao == 0) System.out.println("\n---Voce nao possui mais acao padrao---");
+        System.out.print("ESCOLHA UMA OPCAO: ");
     }
     
     public static void luta(Inimigo inimigo) {
@@ -82,7 +84,7 @@ public class Combate {
         if(iniH >= iniV) System.out.println("\n---Voce ira agir primeiro---");
         else System.out.println("\n---"+inimigo.getNome()+" ira agir primeiro---");
         dist = Dados.dado(1, 3);
-        int op, mov, padrao;
+        int mov, padrao;
         do {
             distancia();
             if(iniH < iniV) {
@@ -93,9 +95,15 @@ public class Combate {
             
             mov = 1;
             padrao = 1;
+            int op;
             do {
-                opcoes(padrao);
-                op = teclado.nextInt();
+                try{
+                    opcoes(padrao);
+                    op = teclado.nextInt();
+                }catch(InputMismatchException e){
+                      System.out.println("\nOPCAO INVALIDA! DIGITE UMA OPCAO VALIDA.");
+                      continue;}
+   
                 switch(op) {
                     case 1 -> {
                         if(dist>1 && mov+padrao>0) {
@@ -119,6 +127,8 @@ public class Combate {
                             padrao = 0;
                         } else System.out.println("\nOPCAO INVALIDA!");
                     }
+                    default -> {
+                            System.out.println("\nOPCAO INVALIDA! DIGITE UMA OPCAO VALIDA.");}
                 }
             } while(mov+padrao>0);
             distancia();
