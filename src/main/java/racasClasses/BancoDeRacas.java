@@ -1,7 +1,9 @@
 package racasClasses;
 
 import conferir.Conferir;
+import static ficha.Menu.menu;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -53,24 +55,27 @@ public final class BancoDeRacas implements Conferir {
     }
         
    public static int EscolheRacas(){
-        Scanner teclado = new Scanner(System.in);
-        ImprimeRacasSimples();
-        System.out.println("5 - Voltar para o menu.\n");
-        System.out.print("ESCOLHA SUA RACA: ");
-        
-        int op;
-        op = teclado.nextInt();
+        int op = 0;
+        // tratamento de exceção InputMismatchException:
+        try{
+                Scanner teclado = new Scanner(System.in);
+                ImprimeRacasSimples();
+                System.out.println("5 - Voltar para o menu.\n");
+                System.out.print("ESCOLHA SUA RACA: ");
+                op = teclado.nextInt();
+                
+        }catch(InputMismatchException e){}
         
         if(op > 0 && op < 5) {
             System.out.printf("Voce escolheu a opcao %d.", op);
             System.out.printf("\nSua raca eh: %s.\n", BancoDeRacas.mapRacas.get(op).nome);
-            if(Conferir.Confere()) return op;
+            if(Conferir.Confere()){ return op;}
             else return EscolheRacas();
         } else if(op == 5) {
             System.out.println("Voltando para o menu...");
             return 0;
         } else {
-            System.out.println("Esta opcao eh invalida. Escolha outra opcao.");
+            System.out.println("Opcao invalida. Por favor, digite uma opcao valida.");
             return EscolheRacas();
         }
     }
