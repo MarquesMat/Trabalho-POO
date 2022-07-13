@@ -1,4 +1,4 @@
-
+/*
 package ficha;
 
 import static ficha.TrabalhoPOO.Dano;
@@ -18,6 +18,7 @@ public class Combate {
     private    int car = 1;
     private int desl = 10;
         private int def = 10;
+        
     public  void getCombate(){
           while(Personagem.getPv()>0 || PvDemonio >0){
             int vel1 = Dados.rola20()+ Personagem.getDeslocamento();
@@ -102,3 +103,4 @@ public class Combate {
     }
     }
 }
+*/
