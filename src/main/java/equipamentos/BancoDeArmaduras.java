@@ -2,8 +2,10 @@ package equipamentos;
 
 import conferir.Conferir;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
+import static racasClasses.BancoDeClasses.ImprimeClassesSimples;
 
 public final class BancoDeArmaduras implements Conferir {
     public static Map<Integer, Armaduras> mapArmaduras = new HashMap<>();
@@ -43,21 +45,28 @@ public final class BancoDeArmaduras implements Conferir {
     }
     
     public static int EscolheArmaduras(boolean pesada){
-        Scanner teclado = new Scanner(System.in);
-        ImprimeArmadurasSimples(pesada);
-        System.out.println("4 - Voltar para o menu\n");
-        System.out.print("ESCOLHA SUA ARMADURA: ");
-        int op = teclado.nextInt();
-        if(op > 0 && op <5) {
+        
+        int op = 0;
+        // tratamento de exceção InputMismatchException:
+        try{
+                Scanner teclado = new Scanner(System.in);
+                ImprimeArmadurasSimples(pesada);
+                System.out.println("4 - Voltar para o menu\n");
+                System.out.print("ESCOLHA SUA ARMADURA: ");
+                op = teclado.nextInt();
+                
+        }catch(InputMismatchException e){}
+
+        if(op > 0 && op <4) {
             System.out.printf("Voce escolheu a opcao %d.", op);
             System.out.printf("\nSua armadura eh: %s.\n", mapArmaduras.get(op).getNome());
             if(Conferir.Confere()) return op;
             return EscolheArmaduras(pesada);
-        } else if(op == 5) {
+        } else if(op == 4) {
             System.out.println("\nVoltando para o menu...");
             return 0;
         } else {
-            System.out.println("Esta nao eh uma opcao valida. Escolha outra opcao.\n");
+            System.out.println("Opcao invalida. Por favor, digite uma opcao valida.");
             return EscolheArmaduras(pesada);
         }
     }
