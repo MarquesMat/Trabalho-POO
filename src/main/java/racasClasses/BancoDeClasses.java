@@ -2,8 +2,10 @@ package racasClasses;
 
 import conferir.Conferir;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
+import static racasClasses.BancoDeRacas.ImprimeRacasSimples;
 
 
 public final class BancoDeClasses implements Conferir {
@@ -54,11 +56,17 @@ public final class BancoDeClasses implements Conferir {
     }
     
     public static int EscolheClasses(){
-        Scanner teclado = new Scanner(System.in);
-        ImprimeClassesSimples();
-        System.out.println("5 - Voltar para o menu\n");
-        System.out.print("ESCOLHA SUA CLASSE: ");
-        int op = teclado.nextInt();
+        int op = 0;
+        // tratamento de exceção InputMismatchException:
+        try{
+                Scanner teclado = new Scanner(System.in);
+                ImprimeClassesSimples();
+                System.out.println("5 - Voltar para o menu.\n");
+                System.out.print("ESCOLHA SUA CLASSE: ");
+                op = teclado.nextInt();
+                
+        }catch(InputMismatchException e){}
+        
         if(op > 0 && op <5) {
             System.out.printf("Voce escolheu a opcao %d.", op);
             System.out.printf("\nSua classe eh: %s.\n", mapClasses.get(op).nome);
@@ -68,7 +76,7 @@ public final class BancoDeClasses implements Conferir {
             System.out.println("\nVoltando para o menu...");
             return 0;
         } else {
-            System.out.println("Esta nao eh uma opcao valida. Escolha outra opcao.\n");
+            System.out.println("Opcao invalida. Por favor, digite uma opcao valida.");
             return EscolheClasses();
         }
     }
