@@ -4,6 +4,7 @@ import equipamentos.BancoDeArmas;
 import java.util.Scanner;
 import java.lang.IllegalArgumentException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 
 import racasClasses.*;
@@ -31,16 +32,28 @@ public class Menu {
     
     public static void exec() {
         System.out.println("----- Bem Vindo(a) ao menu -----");
-        Scanner teclado = new Scanner(System.in);
         int verifica[] = new int[3];
-        for(int i=0; i<3; i++) verifica[i] = 0;
-        int op, x;
+        
+        for(int i=0; i<3; i++){ verifica[i] = 0;}
+        int x;
+        int op = 0;
+        
         String nome;
         List numeros = new ArrayList<Integer>();
+       
         do{
-            menu();
-            op = teclado.nextInt();
+            // tratamento de exceção InputMismatchException:
+             try{
+                Scanner teclado = new Scanner(System.in);
+                menu();
+                op = teclado.nextInt();
+                
+             }catch(InputMismatchException e){
+                System.out.println("Opcao invalida. Por favor, digite um numero.");  
+                continue;}
+                
             switch(op){
+
                 case 1 -> BancoDeRacas.ImprimeRacas();
                 case 2 -> BancoDeClasses.ImprimeClasses();
                 case 3 -> {
@@ -74,10 +87,12 @@ public class Menu {
                     else op = 6;
                 }
                 default ->{
-                    System.out.println("Esta não é uma opção válida. Escolha outra opcao");
+                    System.out.println("Esta nao e uma opcao valida. Por favor, escolha outra opcao.");
                 }       
             }
         }while(op != 6 );
+        
+        Scanner teclado = new Scanner(System.in);
         teclado.nextLine();
         System.out.println("\n\n---Muito bem! Agora, vamos para a parte mais dificil: a escolha de um nome!---");
         System.out.print("\nDigite o nome do seu presonagem: ");
@@ -87,13 +102,23 @@ public class Menu {
     
     public static void exec2() {
         System.out.println("\n\n---Voce esta quase pronto para o combate, mas o caminho é muito perigoso, não vá sem escolher os equipamentos adequados!---");
-        Scanner teclado = new Scanner(System.in);
+        
         int verifica[] = new int[2];
         for(int i=0; i<2; i++) verifica[i] = 0;
-        int op, x;
+        int x;
+        int op = 0;
+        
         do {
-            equipamentos();
-            op = teclado.nextInt();
+            // tratamento de exceção InputMismatchException:
+            try{
+                Scanner teclado = new Scanner(System.in);
+                equipamentos();
+                op = teclado.nextInt();
+                
+             }catch(InputMismatchException InputMismatchException){
+                System.out.println("Opcao invalida. Por favor, digite um numero.");
+                continue;}
+            
             switch(op) {
                 case 1 -> BancoDeArmas.ImprimeArmas();
                 case 2 -> BancoDeArmaduras.ImprimeArmaduras();
