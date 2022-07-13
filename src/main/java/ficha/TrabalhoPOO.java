@@ -53,18 +53,27 @@ public class TrabalhoPOO {
         Personagem.poderRaca();
         imprimirFicha();
         boolean vencer;
+        if(Menu.encerrar()) return;
         do {
             vencer = Combate.luta(BancoDeInimigos.mapClasses.get(1));
-            if(vencer) Personagem.subirNivel();
+            if(vencer) {
+                Personagem.subirNivel();
+                System.out.println("---Parabens pela vitoria!---");
+            }
             else System.out.println("---Tente de novo!---");
         } while(!vencer);        
         imprimirFicha();
+        if(Menu.encerrar()) return;
         do {
             vencer = Combate.luta(BancoDeInimigos.mapClasses.get(2));
-            if(vencer) Personagem.subirNivel();
+            if(vencer) {
+                Personagem.subirNivel();
+                System.out.println("---Parabens pela vitoria!---");
+            }
             else System.out.println("---Tente de novo!---");
         } while(!vencer);        
         imprimirFicha();
+        if(Menu.encerrar()) return;
         do {
             vencer = Combate.luta(BancoDeInimigos.mapClasses.get(3));
             if(vencer) {

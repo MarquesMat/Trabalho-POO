@@ -1,7 +1,6 @@
 package racasClasses;
 
 import conferir.Conferir;
-import static ficha.Menu.menu;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Map;
