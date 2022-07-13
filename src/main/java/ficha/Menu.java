@@ -2,7 +2,6 @@ package ficha;
 import equipamentos.BancoDeArmaduras;
 import equipamentos.BancoDeArmas;
 import java.util.Scanner;
-import java.lang.IllegalArgumentException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;

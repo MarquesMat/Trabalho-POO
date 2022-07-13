@@ -1,7 +1,6 @@
 package equipamentos;
 
 import conferir.Conferir;
-import static equipamentos.BancoDeArmaduras.ImprimeArmadurasSimples;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Map;

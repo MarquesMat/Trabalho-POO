@@ -14,6 +14,6 @@ public final class Poderes {
         Poderes.mapPoderes.put(5, "Ataque especial: Ganhe +4 no proximo ataque. (1 PM)");
         Poderes.mapPoderes.put(6, "Bola de fogo: Cause 3d6 pontos de dano. (5 PM)");
         Poderes.mapPoderes.put(7, "Curar ferimentos: Ganhe 2d8 PV. (3 PM)");
-        Poderes.mapPoderes.put(8, "Marca do cacador: Multiplique o próximo dano por 1.5. (3 PM)");
+        Poderes.mapPoderes.put(8, "Marca do cacador: Aumente a margem de critico em 2. (3 PM)");
     }
 }

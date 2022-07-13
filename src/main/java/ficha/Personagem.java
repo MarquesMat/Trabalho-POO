@@ -13,7 +13,6 @@ public class Personagem {
     private static Armaduras armadura;
     private static Armas arma;
     private static Atributos atributos;
-    private String simbolo;
     
     public Personagem() {
         Personagem.atributos = new Atributos(0,0,0,0,0,0);
@@ -23,7 +22,6 @@ public class Personagem {
     public Personagem(Raca raca, Classe classe, String simbolo) {
         Personagem.raca = raca;
         Personagem.classe = classe;
-        this.simbolo = simbolo;//adicionado simbolo usado no mapa de combate
     }
     
     public static void setRaca(Raca raca) {
@@ -52,11 +50,7 @@ public class Personagem {
     public static Armaduras getArmadura() {
         return Personagem.armadura;
     }
-        
-    public String getSimbolo(){
-        return simbolo;
-    }
-    
+            
     public static void setNome(String nome) {
         Personagem.nome = nome;
     }
@@ -91,6 +85,8 @@ public class Personagem {
     }
     public static void setAtq() {
         Personagem.atq = (Personagem.nivel/2);
+        if(Personagem.getArma().getAlcance() == 1) Personagem.atq += Personagem.atributos.getModificador(0);
+        else Personagem.atq += Personagem.atributos.getModificador(1);
     }
     public static int getAtq() {
         return Personagem.atq;
@@ -99,6 +95,7 @@ public class Personagem {
     public static void equipar() {
         Personagem.setDefesa();
         Personagem.setDeslocamento();
+        Personagem.setAtq();
     }    
     public static void setDefesa() {
         Personagem.def = 10  + (Personagem.nivel / 2);
@@ -143,5 +140,14 @@ public class Personagem {
     
     public static void imprimeAtributos() {
         Personagem.atributos.imprimeAtributos();
+    }
+    
+    public static void subirNivel() {
+        Personagem.nivel++;
+        Personagem.setPv();
+        Personagem.setMana();
+        Personagem.setDefesa();
+        Personagem.setAtq();
+        Personagem.poderRaca();
     }
 }

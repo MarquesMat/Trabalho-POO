@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
-import static racasClasses.BancoDeClasses.ImprimeClassesSimples;
 
 public final class BancoDeArmaduras implements Conferir {
     public static Map<Integer, Armaduras> mapArmaduras = new HashMap<>();

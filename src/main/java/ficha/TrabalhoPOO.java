@@ -25,7 +25,7 @@ public class TrabalhoPOO {
         Personagem.imprimeAtributos();
         System.out.print("\nPV: "+Personagem.getPv());
         System.out.println("        Mana: "+Personagem.getMana());
-        System.out.print("\nDefesa: "+Personagem.getDefesa());
+        System.out.print("\nAtaque: "+Personagem.getAtq()+"     Defesa: "+Personagem.getDefesa());
         System.out.println("        Deslocamento: "+Personagem.getDeslocamento());
         System.out.println("Poderes: ");
         System.out.println(Poderes.mapPoderes.get(Personagem.getRaca().getPoder()));
@@ -52,6 +52,27 @@ public class TrabalhoPOO {
         Personagem.equipar();
         Personagem.poderRaca();
         imprimirFicha();
-        //Combate.luta(BancoDeInimigos.mapClasses.get(1));
+        boolean vencer;
+        do {
+            vencer = Combate.luta(BancoDeInimigos.mapClasses.get(1));
+            if(vencer) Personagem.subirNivel();
+            else System.out.println("---Tente de novo!---");
+        } while(!vencer);        
+        imprimirFicha();
+        do {
+            vencer = Combate.luta(BancoDeInimigos.mapClasses.get(2));
+            if(vencer) Personagem.subirNivel();
+            else System.out.println("---Tente de novo!---");
+        } while(!vencer);        
+        imprimirFicha();
+        do {
+            vencer = Combate.luta(BancoDeInimigos.mapClasses.get(3));
+            if(vencer) {
+                Personagem.subirNivel();
+                System.out.println("---Parabens pela vitoria!---");
+            }
+            else System.out.println("---Tente de novo!---");
+        } while(!vencer);        
+        imprimirFicha();
     }
 }
