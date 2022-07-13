@@ -2,6 +2,7 @@ package ficha;
 
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -67,17 +68,22 @@ public class Dados {
     
     public static boolean confere(List numeros, int a) {
         if(numeros.contains(a)) return true;
-        System.out.println("\n---Numero invalido ou ja escolhido---\n");
+        System.out.println("\n---Opcao invalida ou ja escolhida---\n");
         return false;
     }
     
     public static List Auxiliar(List numeros, int i, String atributo) {
-        Scanner teclado = new Scanner(System.in);
-        int a;
+        
+        int a = 0;
         do {
-        System.out.printf("Defina o valor de %s: ", atributo);
-        a = teclado.nextInt();
-        } while(!confere(numeros, a));
+            try{
+                Scanner teclado = new Scanner(System.in);
+                System.out.printf("Defina o valor de %s: ", atributo);
+                a = teclado.nextInt();}
+            catch(InputMismatchException e){}
+            
+        }while(!confere(numeros, a));
+        
         numeros.set(numeros.indexOf(a), -a);
         Personagem.setAtributos(i, a);
         return numeros;
