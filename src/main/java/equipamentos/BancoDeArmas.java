@@ -1,7 +1,9 @@
 package equipamentos;
 
 import conferir.Conferir;
+import static equipamentos.BancoDeArmaduras.ImprimeArmadurasSimples;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -51,16 +53,23 @@ public final class BancoDeArmas implements Conferir {
     }
     
     public static int EscolheArmas(boolean marcial){
-        Scanner teclado = new Scanner(System.in);
-        ImprimeArmasSimples(marcial);
-        System.out.println("5 - Voltar para o menu\n");
-        System.out.print("ESCOLHA SUA ARMA: ");
-        int op = teclado.nextInt();
+        
+        int op = 0;
+        // tratamento de exceção InputMismatchException:
+        try{
+                Scanner teclado = new Scanner(System.in);
+                ImprimeArmasSimples(marcial);
+                System.out.println("5 - Voltar para o menu\n");
+                System.out.print("ESCOLHA SUA ARMA: ");
+                op = teclado.nextInt();
+                
+        }catch(InputMismatchException e){}
+       
         if(op > 0 && op <5) {
             System.out.printf("Voce escolheu a opcao %d.", op);
             if(!marcial && mapArmas.get(op).getTipo().equals("Marcial")) System.out.println("Incompativel com sua classe");
             else {
-                System.out.printf("\nSua armadura eh: %s.\n", mapArmas.get(op).getNome());
+                System.out.printf("\nSua arma eh: %s.\n", mapArmas.get(op).getNome());
                 if(Conferir.Confere()) return op;
             }
             return EscolheArmas(marcial);
@@ -68,7 +77,7 @@ public final class BancoDeArmas implements Conferir {
             System.out.println("\nVoltando para o menu...");
             return 0;
         } else {
-            System.out.println("Esta nao eh uma opcao valida. Escolha outra opcao.\n");
+            System.out.println("Opcao invalida. Por favor, digite uma opcao valida.");
             return EscolheArmas(marcial);
         }
     }
