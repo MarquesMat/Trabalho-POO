@@ -1,17 +1,26 @@
 package conferir;
 
+import static ficha.Menu.menu;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public interface Conferir {
     public static boolean Confere(){
-        Scanner teclado = new Scanner(System.in);
-        int confere;
-        System.out.println("Voce confirma?");
-        System.out.println("1 - Sim");
-        System.out.println("2 - Escolher outra opcao");
-        confere = teclado.nextInt();
-
+        
         while(true){
+            int confere;
+            // tratamento de exceção InputMismatchException:
+             try{
+                Scanner teclado = new Scanner(System.in);
+                System.out.println("Voce confirma?");
+                System.out.println("1 - Sim");
+                System.out.println("2 - Escolher outra opcao");
+                confere = teclado.nextInt();
+                
+             }catch(InputMismatchException e){
+                System.out.println("Opcao invalida. Por favor, digite uma opcao valida.");
+                continue;}
+        
             switch(confere){
                 case 1 -> { 
                     System.out.println("Sua opcao foi confirmada.\n");
@@ -21,8 +30,8 @@ public interface Conferir {
                     return false;
                 }
                 default -> {
-                    System.out.println("Esta opcao eh invalida.\nEscolha SIM(1) ou NAO (2): ");
-                    confere = teclado.nextInt();
+                    System.out.println("Opcao invalida. Por favor, digite uma opcao valida.");
+                    
                 }
             }
         }
